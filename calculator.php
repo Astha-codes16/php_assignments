@@ -4,7 +4,7 @@
     <title>Simple Calculator</title>
 </head>
 <body>
-<h2>PHP Calculator</h2>
+<h2 style='color:blue'>PHP Calculator</h2>
 <form method="post">
     <input type="number" name="num1" required>
     <select name="operator">
@@ -16,7 +16,13 @@
     <input type="number" name="num2" required>
     <input type="submit" name="submit" value="Calculate">
 </form>
-
+<!-- But all this goes inside the request body, not visible to user.
+⭐ How does PHP receive it?
+Inside your PHP file:
+$_POST['num1']
+$_POST['operator']
+$_POST['num2']
+These read the data from the POST request. -->
 <?php
 if(isset($_POST['submit'])){
     $num1 = $_POST['num1'];
